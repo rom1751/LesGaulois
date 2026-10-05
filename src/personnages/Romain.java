@@ -24,15 +24,13 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 
-	public void recevoirCoup (int forceCoup) {
-		this.force= force - forceCoup;
-		if (force<1) {
-			parler("Le Romain "+this.nom+ " : "+ "J'abandonne");}
-			else{
-				parler("Le Romain "+this.nom+ " : "+ "Aïe");
-			
+	public void recevoirCoup(int forceCoup) {
+		this.force = force - forceCoup;
+		while (force > 1) {
+			parler("Aïe");
+			this.force = force - forceCoup;
 		}
+		parler("J'abandonne");
 	}
+
 }
-
-
